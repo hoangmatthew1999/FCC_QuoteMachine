@@ -3,7 +3,11 @@
   height: 50%;
   border-style: solid;
   border-width: 5px;
-  width: 300px;
+  width: 50%;
+  position: absolute;
+  top: 25%;
+  right: 20%;
+  background-color:blue 
 }
 
 .App-logo {
@@ -35,3 +39,7 @@
     transform: rotate(360deg);
   }
 }
+.background{
+  background-color: green
+}
+
