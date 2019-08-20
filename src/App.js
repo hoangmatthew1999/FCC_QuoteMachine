@@ -36,11 +36,14 @@ class Car extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      color: "red",
+      color: "#39D1B4",
     };
   }
   changeColor = () => {
-    this.setState({color: "blue"});
+    let random_array = ['1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f'];
+    let random_index = Math.floor(Math.random() * random_array.length );
+    let bgColor = `#${random_array[random_index]}${random_array[random_index]}${random_array[random_index]}${random_array[random_index]}${random_array[random_index]}${random_array[random_index]}`
+    this.setState({color: bgColor});
   }
   render() {
     return (
