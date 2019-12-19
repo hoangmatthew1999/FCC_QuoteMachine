@@ -1,37 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
+import { render } from "react-dom";
 import './App.css';
-import { SSL_OP_TLS_ROLLBACK_BUG } from 'constants';
+import './quotes.js';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const fs = require('fs')
 const path = require('path')
 const fs_ = require('./fs.js')
 
 const styles = {borderWidth: "400px", background: "green", width: "400px", borderHeight: "400px" };
-/*
-function App() {
-  const colors = ['red','blue','green','magenta','pink','purple',]
-    return (
-      <div className = "background">
-        <div id = "app" className="App" style = { {background: this.state.color} }>
-          <button onClick = {this.randomColor}>New Quote</button>
-        </div>
-      </div>
-    );
-}
-function changingColor(){
-  console.log('hi');
-  const a = document.querySelector("#app");
-  console.log(a);
-}
-function BuildingQuotes(){
-  fs.readFile( 
-    path.join(__dirname, '../output.txt'),{encoding: 'utf-8' },
-function(error,data){if(error)
-    return console.error(error)
-    console.log(data)} 
-)
-}
-*/
 class Car extends React.Component {
   constructor(props) {
     super(props);
@@ -46,10 +25,14 @@ class Car extends React.Component {
     this.setState({color: bgColor});
   }
   render() {
+    console.log(data.slice(0,14));
     return (
         <div className = "background">
         <div id = "app" className="App" style = { {background: this.state.color} }>
           <button onClick = {this.changeColor}>New Quote</button>
+          <a href = "https://en.wikipedia.org/wiki/Vietnamese_Americans#Income" class="fa fa-twitter"></a>
+          <a href = "https://en.wikipedia.org/wiki/Vietnamese_Americans#Income" class="fa fa-tumblr"></a>
+          <FontAwesomeIcon icon = {faTwitter}/>
         </div>
       </div>
     );
