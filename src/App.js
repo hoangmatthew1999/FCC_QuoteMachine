@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
-import { render } from "react-dom";
+import { render, createPortal } from "react-dom";
 import './App.css';
-import './quotes.js';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import txt from "./data.txt";
+import JSONdata from './data.json';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+//import { faTwitter } from '@fortawesome/free-brands-svg-icons';import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const fs = require('fs')
 const path = require('path')
 const fs_ = require('./fs.js')
@@ -16,23 +16,40 @@ class Car extends React.Component {
     super(props);
     this.state = {
       color: "#39D1B4",
+      text: ''
     };
   }
+  // componentDidMount(){
+  //   fetch('https://github.com/')
+  //   .then(r => r.text() )
+  //   // .then(t => console.log(t) )
+  //   .catch(error => console.log(error) )
+
+
+  // }
   changeColor = () => {
     let random_array = ['1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f'];
     let random_index = Math.floor(Math.random() * random_array.length );
     let bgColor = `#${random_array[random_index]}${random_array[random_index]}${random_array[random_index]}${random_array[random_index]}${random_array[random_index]}${random_array[random_index]}`
     this.setState({color: bgColor});
+    // fetch('/data.txt')
+    // .then((r) => r.text())
+    // .then(text  => {
+    //   console.log(text);
+    // })  
   }
   render() {
-    console.log(data.slice(0,14));
-    return (
+    //let randomizer = quote[1];
+    return (  
         <div className = "background">
         <div id = "app" className="App" style = { {background: this.state.color} }>
+          <button>Testing text file</button>
           <button onClick = {this.changeColor}>New Quote</button>
           <a href = "https://en.wikipedia.org/wiki/Vietnamese_Americans#Income" class="fa fa-twitter"></a>
           <a href = "https://en.wikipedia.org/wiki/Vietnamese_Americans#Income" class="fa fa-tumblr"></a>
-          <FontAwesomeIcon icon = {faTwitter}/>
+          {/*<FontAwesomeIcon icon = {faTwitter}/>*/}
+          {JSONdata.map((object,index)=> {return <h1>{object.text}</h1>
+        })}
         </div>
       </div>
     );

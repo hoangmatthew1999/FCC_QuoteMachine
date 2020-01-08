@@ -1,9 +1,11 @@
+import React from 'react';
+import {readFileSync} from "react";
 const fs = require('fs');
+
 
 let quote = [];
 var data = fs.readFileSync('data.txt', 'utf8');
 let string = data.split(" ");
-//console.log(string);
 let i = 0;
 let machine = "";
 /*
@@ -12,16 +14,34 @@ if string includes is true
 else
     continue to concatenate
 */
-while (string[i].includes("\n\n") != true){
-    machine = machine + " " + string[i];
-    i++
-    console.log(machine);
+for(i in string){
+    if(string[i].includes("\n\n")){
+        machine = machine + " " + string[i];
+        i++
+        //console.log(machine);
+        quote.push(machine);
+        machine = "";
+    }
+    else{
+        machine = machine + " " + string[i];
+        i++;
+    }
 }
 
-machine = machine + " " + string[i]
-console.log(machine)
+console.log(quote[Math.floor(Math.random() * 10)]);
 
-
+class Randomizer extends React.Component {
+    render() {
+    let generator = quote[0];
+      console.log(quote[1]);
+      return (
+          <div>
+              <h1>ad</h1>
+          </div>
+      );
+    }
+  }
+  export default Randomizer;
 
 
 
