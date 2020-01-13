@@ -12,7 +12,7 @@ const fs_ = require('./fs.js')
 
 const styles = {borderWidth: "400px", background: "green", width: "400px", borderHeight: "400px" };
 const data = JSONdata;
-console.log(JSONdata);
+//console.log(JSONdata);
 class Car extends React.Component {
   constructor(props) {
     super(props);
@@ -22,7 +22,7 @@ class Car extends React.Component {
     };
   }
   parseJSON = () => {
-    console.log(data);
+    console.log(data[Math.floor(Math.random() * 10)]);
     
   }
   changeColor = () => {
