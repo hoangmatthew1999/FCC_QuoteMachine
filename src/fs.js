@@ -1,7 +1,6 @@
-const fetch = require("node-fetch");
-fetch('https://github.com/')
-    .then(r => r.text() )
-    // .then(t => console.log(t) )
-    .catch(error => console.log(error) )
-
-
+/*
+var fs = require("fs");
+//var content = fs.readFileSync("data.json","utf-8");
+let JSONparse = JSON.parse(content);
+console.log(JSONparse[123]);
+*/

@@ -11,6 +11,8 @@ const path = require('path')
 const fs_ = require('./fs.js')
 
 const styles = {borderWidth: "400px", background: "green", width: "400px", borderHeight: "400px" };
+const data = JSONdata;
+console.log(JSONdata);
 class Car extends React.Component {
   constructor(props) {
     super(props);
@@ -19,14 +21,10 @@ class Car extends React.Component {
       text: ''
     };
   }
-  // componentDidMount(){
-  //   fetch('https://github.com/')
-  //   .then(r => r.text() )
-  //   // .then(t => console.log(t) )
-  //   .catch(error => console.log(error) )
-
-
-  // }
+  parseJSON = () => {
+    console.log(data);
+    
+  }
   changeColor = () => {
     let random_array = ['1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f'];
     let random_index = Math.floor(Math.random() * random_array.length );
@@ -43,13 +41,14 @@ class Car extends React.Component {
     return (  
         <div className = "background">
         <div id = "app" className="App" style = { {background: this.state.color} }>
-          <button>Testing text file</button>
-          <button onClick = {this.changeColor}>New Quote</button>
+          <button onClick = {this.parseJSON}>Testing text file</button>
+          <button oClick = {this.changeColor}>New Quote</button>
           <a href = "https://en.wikipedia.org/wiki/Vietnamese_Americans#Income" class="fa fa-twitter"></a>
           <a href = "https://en.wikipedia.org/wiki/Vietnamese_Americans#Income" class="fa fa-tumblr"></a>
           {/*<FontAwesomeIcon icon = {faTwitter}/>*/}
           {JSONdata.map((object,index)=> {return <h1>{object.text}</h1>
         })}
+        <h1>{this.state.text}</h1>
         </div>
       </div>
     );
