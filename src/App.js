@@ -11,8 +11,7 @@ const path = require('path')
 const fs_ = require('./fs.js')
 
 const styles = {borderWidth: "400px", background: "green", width: "400px", borderHeight: "400px" };
-const data = JSONdata;
-//console.log(JSONdata);
+let data = JSONdata;
 class Car extends React.Component {
   constructor(props) {
     super(props);
@@ -22,8 +21,10 @@ class Car extends React.Component {
     };
   }
   parseJSON = () => {
-    console.log(data[Math.floor(Math.random() * 10)]);
-    
+    console.log(data[Math.floor(Math.random())].text);
+    let quoteTemp = data[Math.floor(Math.random())].text;
+    this.setState({text: quoteTemp});
+
   }
   changeColor = () => {
     let random_array = ['1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f'];
@@ -46,8 +47,8 @@ class Car extends React.Component {
           <a href = "https://en.wikipedia.org/wiki/Vietnamese_Americans#Income" class="fa fa-twitter"></a>
           <a href = "https://en.wikipedia.org/wiki/Vietnamese_Americans#Income" class="fa fa-tumblr"></a>
           {/*<FontAwesomeIcon icon = {faTwitter}/>*/}
-          {JSONdata.map((object,index)=> {return <h1>{object.text}</h1>
-        })}
+          {/* {JSONdata.map((object,index)=> {return <h1>{object.text}</h1>
+        })} */}
         <h1>{this.state.text}</h1>
         </div>
       </div>
