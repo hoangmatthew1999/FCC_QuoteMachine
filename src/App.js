@@ -47,7 +47,7 @@ class Car extends React.Component {
         <div className = "background">
         <div id = "app" className="App" style = { {background: this.state.color} }>
           <button onClick = {this.parseJSON}>Testing text file</button>
-          <button oClick = {this.changeColor}>New Quote</button>
+          <button onClick = {this.changeColor}>New Quote</button>
           <a href = "https://en.wikipedia.org/wiki/Vietnamese_Americans#Income" class="fa fa-twitter"></a>
           <a href = "https://en.wikipedia.org/wiki/Vietnamese_Americans#Income" class="fa fa-tumblr"></a>
           {/*<FontAwesomeIcon icon = {faTwitter}/>*/}
