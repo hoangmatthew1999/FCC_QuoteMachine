@@ -22,8 +22,12 @@ class Car extends React.Component {
   }
   parseJSON = () => {
     console.log(data[Math.floor(Math.random())].text);
-    let quoteTemp = data[Math.floor(Math.random())].text;
+    let quoteTemp = data[Math.floor(Math.random() * 10)].text;
     this.setState({text: quoteTemp});
+    console.log( Math.floor( Math.random() * 10) );
+  
+
+
 
   }
   changeColor = () => {
